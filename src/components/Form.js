@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 class Form extends Component {
     render() {
+        // each <input>'s name attribute/prop should match a key in state
         return (
             <form action="/resources" method="post">
             <input className="input-field row center" type="text" name="resource[name]" placeholder="Title" />

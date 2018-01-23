@@ -4,12 +4,14 @@ import getRequest from '../requests';
 
 
 class ResourcesIndex extends Component {
-
+    constructor(props){
+        super(props)
+    }
 render () { 
-
+    console.log(this.props)
    let resourcesList = this.props.resources.map((resource, index) => {
        return(
-            <tr>
+            <tr key='index'>
                 <td>
                     <div className="votes">{resource.votes}</div>
                 </td>
@@ -26,7 +28,7 @@ render () {
                 </td>
             </tr>
        )
-    console.log(resourcesList)
+    console.log('RESOURCES GALORE! ' + resourcesList)
 });
 
 // console.log(this.props.resources)
