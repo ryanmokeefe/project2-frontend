@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import getRequest from '../requests';
+// import getRequest from '../requests';
 // import {object, number} from 'prop-types';
 
 
@@ -8,10 +8,10 @@ class ResourcesIndex extends Component {
         super(props)
     }
 render () { 
-    console.log(this.props)
-   let resourcesList = this.props.resources.map((resource, index) => {
-       return(
-            <tr key='index'>
+    console.log('render ResourceIndex: ' + this.props)
+    let resourcesList = this.props.resources.map((resource, index) => {
+        return(
+            <tr key={index}>
                 <td>
                     <div className="votes">{resource.votes}</div>
                 </td>
@@ -28,10 +28,8 @@ render () {
                 </td>
             </tr>
        )
-    console.log('RESOURCES GALORE! ' + resourcesList)
-});
+    });
 
-// console.log(this.props.resources)
 
     return(
     // {{!-- hide table for mobile --}}

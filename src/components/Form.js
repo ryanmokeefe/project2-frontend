@@ -11,7 +11,7 @@ class Form extends Component {
         {/*  */}
 
             <select className="input-field row selections-box" name="resource[type]" >
-              <option value="" disabled selected>What type of link is this?:</option>
+              <option value="" disabled defaultValue>What type of link is this?:</option>
               <option placeholder="Lesson" value="Lesson">Lesson</option>
               <option placeholder="Article" value="Article">Article</option>
               <option placeholder="Lecture" value="Lecture">Lecture</option>
@@ -22,7 +22,7 @@ class Form extends Component {
         {/*  */}
 
             <select className="input-field row selections-box" name="resource[videos]">
-              <option value="" disabled selected>Videos?</option>
+              <option value="" disabled defaultValue>Videos?</option>
               <option placeholder="Yes" value="Yes">Yes</option>
               <option placeholder="No" value="No">No</option>
             </select>
@@ -30,7 +30,7 @@ class Form extends Component {
         {/*  */}
     
             <select className="input-field row selections-box" name="resource[exercises]">
-              <option value="" disabled selected>Exercises?</option>
+              <option value="" disabled defaultValue>Exercises?</option>
               <option placeholder="Yes" value="Yes">Yes</option>
               <option placeholder="No" value="No">No</option>
             </select>

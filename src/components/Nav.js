@@ -10,22 +10,24 @@ const Nav = () => {
               <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           </div>        
           <ul className="right hide-on-med-and-down">
-            {/* {{#if currentUser}}
-              <li><a href="/logout">Logout {{currentUser.local.email}}</a></li>
-            {{else}}
+
+            {/* {#if currentUser}
+              <li><a href="/logout">Logout {currentUser.local.email}</a></li>
+            {else}
               <li><a href="/login">Login</a></li>
               <li><a href="/signup">Signup</a></li>
-            {{/if}}  
+            {/if}  
             <li><a href="/profile">Profile</a></li>
           </ul>
           <ul className="side-nav" id="mobile-demo">
-            {{#if currentUser}}
-              <li><a href="/logout">Logout {{currentUser.local.email}}</a></li>
-            {{else}}
+            {#if currentUser}
+              <li><a href="/logout">Logout {currentUser.local.email}</a></li>
+            {else}
               <li><a href="/login">Login</a></li>
               <li><a href="/signup">Signup</a></li>
-            {{/if}}  
+            {/if}  
             <li><a href="/profile">Profile</a></li> */}
+
           </ul>
 
         </div>
@@ -43,7 +45,7 @@ const Nav = () => {
         <div className="nav-content">
           <ul className="">
             <li className="nav-bottom">
-              <button className="wasA" href="/#1">
+              <div className="wasA" href="/#1">
       {/* {{!-- 1. dropdown menu for search --}} */}
                 <a id="navMenu1" className='dropdown-button searchBtn' href='#' data-activates='dropdown1'>Sort by:</a>
                   {/* <!-- Dropdown Structure --> */}
@@ -54,11 +56,11 @@ const Nav = () => {
                     <li className="divider"></li>
                     <li><a href="/resources">All</a></li>
                   </ul>
-              </button>
+              </div>
             </li>
       {/* {{!-- 2. dropdown for search: type --}} */}
             <li className="nav-bottom">
-              <button className="wasA active" href="#2">
+              <div className="wasA active" href="#2">
                 <a id="navMenu2" className='dropdown-button searchBtn' href='2' data-activates='dropdown2'>Find by type:</a>
                   {/* <!-- Dropdown Structure --> */}
                   <ul id='dropdown2' className='dropdown-content'>
@@ -68,7 +70,7 @@ const Nav = () => {
                     <li><a href="/search/podcasts">Podcasts</a></li>
                     <li><a href="/search/lectures">Lectures</a></li>
                   </ul>                
-              </button>
+              </div>
             </li>
 
       {/* {{!-- 3. nav tab tbd --}} */}
