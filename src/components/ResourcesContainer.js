@@ -8,11 +8,12 @@ class ResourceContainer extends Component {
     constructor (props) {
         super(props)
         this.state = {
+            current: {},
             resources: [],
             showOne: false,
             query: '',
             newResource: {
-                // add each key from schema
+                // add each key/value from schema
                 // each key in schema/state should match value of `name` on each input
                 name: null,
                 subject: null,
@@ -22,7 +23,8 @@ class ResourceContainer extends Component {
                 exercises: null,
                 votes: null
             }
-        };
+        }
+        this.toggleDetails = this.toggleDetails.bind(this)
     }
 
     componentDidMount() {
@@ -33,11 +35,19 @@ class ResourceContainer extends Component {
             }))
     }
 
+    toggleDetails(resource) {
+        this.setState = {
+            showOne: true,
+            current: resource
+        }
+        console.log(this.state.current)
+    }    
+
     render() {
         return (
             <div>
                 {
-                    this.state.showOne ? <Resource resources={this.state.resources}/> : <ResourcesIndex resources={this.state.resources}/> 
+                    this.state.showOne ? <Resource resource={this.state.current}/> : <ResourcesIndex onRowClick={(resource) => this.toggleDetails} resources={this.state.resources}/> 
                 }
             </div>
         )
