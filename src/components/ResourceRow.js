@@ -14,13 +14,11 @@ class ResourceRow extends Component {
                 </td>
                 {/* add click event to toggle Resource view: */}
                 <td >
-                    <div onClick={this.props.onRowClick}>
-                        {/* <a href={"/resources/" + this.props.resource.name}> */}
+                        <a href={"/resources/" + this.props.resource.name}>
                         <h4>
                         {this.props.resource.name}
                         </h4>
-                        {/* </a>  */}
-                    </div>    
+                        </a> 
                 </td>
                 <td>
                     {this.props.resource.subject} 
@@ -34,27 +32,5 @@ class ResourceRow extends Component {
 
 }
 
-
-// const ResourceRow = ({resource, index}) => {
-//     return (
-//         <tr key={index}>
-//             <td>
-//                 <div className="votes">{resource.votes}</div>
-//             </td>
-//             {/* add click event to toggle Resource view: */}
-//             <td onClick={this.props.onRowClick}>
-//                 <h4>
-//                     <a href="/resources/{resource.name}">{resource.name}</a> 
-//                 </h4>    
-//             </td>
-//             <td>
-//                 {resource.subject} 
-//             </td>
-//             <td>
-//                 <a href="{resource.url}">{resource.url}</a>
-//             </td>
-//         </tr>
-//     )
-// }
 
 export default ResourceRow

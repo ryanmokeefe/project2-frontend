@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Resource from './Resource.js'
 import ResourcesIndex from './ResourcesIndex.js'
-import {queryResources} from '../Utils.js'
+// import {queryResources} from '../Utils.js'
 
 
 class ResourceContainer extends Component {
@@ -24,7 +24,6 @@ class ResourceContainer extends Component {
                 votes: null
             }
         }
-        this.toggleDetails = this.toggleDetails.bind(this)
     }
 
     componentDidMount() {
@@ -35,19 +34,13 @@ class ResourceContainer extends Component {
             }))
     }
 
-    toggleDetails(resource) {
-        this.setState = {
-            showOne: true,
-            current: resource
-        }
-        console.log(this.state.current)
-    }    
 
     render() {
         return (
             <div>
                 {
-                    this.state.showOne ? <Resource resource={this.state.current}/> : <ResourcesIndex onRowClick={(resource) => this.toggleDetails} resources={this.state.resources}/> 
+                this.state.showOne ? <Resource resource={this.state.current}/> : <ResourcesIndex resources={this.state.resources} onRowClick={(resource) => this.toggleDetails}/> 
+                    
                 }
             </div>
         )

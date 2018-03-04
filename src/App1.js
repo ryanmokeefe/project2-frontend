@@ -3,9 +3,9 @@ import './App.css';
 import Nav from './components/Nav.js';
 import ResourcesIndex from './components/ResourcesIndex.js';
 import Resource from './components/Resource.js';
-// import Form from './components/Form.js';
+import Form from './components/Form.js';
 import Utils from './Utils.js';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import {queryResources} from './Utils.js'
 
 class App extends Component {
@@ -42,21 +42,25 @@ class App extends Component {
 
   render() {
     return (
-        <div className='App'>
-        <Nav />
-        <main>
-          <Switch>
-            {/* <Route exact path='/'              render={()      => (<Home />)}/> */}
-            <Route exact path='/resources'         render={(props) => (<ResourcesIndex {...props} resources={this.state.resources} />)}/>
-            {/* <Route exact path='/resources/add'     render={()      => (<ResourceAdd />)} /> */}
-            {/* <Route path='/resources/:title/edit'   render={(props) => (<ResourceEdit {...props} />)} /> */}
-            <Route path='/resources/:title'        render={(props) => (<Resource {...props}/>)} resources={this.state.resources}  />
-            {/* <Route exact path='/users'         render={()      => (<UserAuth />)} /> */}
-            {/* <Route path='/*' render={() => (<Landing />)} /> */}
-          </Switch>
-        </main>
-        {/* <Footer /> */}
-      </div>
+        <div className="App">
+          <Nav />
+          <div>
+            <Route path='/resources' component={
+              () => (
+                <div>
+                  <ResourcesIndex resources={this.state.resources} />
+                  <Form />
+                </div>
+              )
+            } />
+            <Route path='/resources/:name' component={
+              (props) => (
+                <Resource {...props} resources={this.state.resources}/>
+              )
+            } />
+
+          </div>
+        </div>
     );
   }
 }

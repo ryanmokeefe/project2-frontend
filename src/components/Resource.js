@@ -4,10 +4,17 @@ import {object, number} from 'prop-types'
 class Resource extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            resources: this.props.resources
+        }
 
     }
 
     render() {
+        let resource = this.props.resources.find((e) => {
+            return e.name === this.props.match.params.name
+        })
+
         return (
             <div> 
                 <h1>thiiiiiiings</h1>
