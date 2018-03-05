@@ -11,8 +11,8 @@ class Resource extends Component {
     }
 
     render() {
-        let resource = this.props.resources.find((e) => {
-            return e.name === this.props.match.params.name
+        let resource = this.props.resources.find((resource) => {
+            return resource.name === this.props.match.params.name
         })
 
         return (

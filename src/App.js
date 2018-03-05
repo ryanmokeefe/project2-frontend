@@ -35,9 +35,11 @@ class App extends Component {
   componentDidMount() {
     queryResources()
         .then((data) => 
+        // console.log(data)
         this.setState({
             resources: data.data
-        }))
+        })
+      )
   }
 
 
@@ -51,7 +53,7 @@ class App extends Component {
             <Route exact path='/resources'         render={(props) => (<ResourcesIndex {...props} resources={this.state.resources} />)}/>
             {/* <Route exact path='/resources/add'     render={()      => (<ResourceAdd />)} /> */}
             {/* <Route path='/resources/:title/edit'   render={(props) => (<ResourceEdit {...props} />)} /> */}
-            <Route path='/resources/:title'        render={(props) => (<Resource {...props}/>)} resources={this.state.resources}  />
+            <Route path='/resources/:name'        render={(props) => (<Resource {...props}/>)} resources={this.state.resources}  />
             {/* <Route exact path='/users'         render={()      => (<UserAuth />)} /> */}
             {/* <Route path='/*' render={() => (<Landing />)} /> */}
           </Switch>
