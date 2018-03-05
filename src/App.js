@@ -4,6 +4,7 @@ import Nav from './components/Nav.js';
 import ResourcesIndex from './components/ResourcesIndex.js';
 import Resource from './components/Resource.js';
 // import Form from './components/Form.js';
+import Welcome from './components/Welcome.js';
 import Utils from './Utils.js';
 import {Route, Switch, Link} from 'react-router-dom';
 import {queryResources} from './Utils.js'
@@ -46,7 +47,7 @@ class App extends Component {
         <Nav />
         <main>
           <Switch>
-            {/* <Route exact path='/'              render={()      => (<Home />)}/> */}
+            <Route exact path='/'                  render={()      => (<Welcome />)}/>
             <Route exact path='/resources'         render={(props) => (<ResourcesIndex {...props} resources={this.state.resources} />)}/>
             {/* <Route exact path='/resources/add'     render={()      => (<ResourceAdd />)} /> */}
             {/* <Route path='/resources/:title/edit'   render={(props) => (<ResourceEdit {...props} />)} /> */}
