@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Resource from './Resource.js'
+// import Resource from './Resource.js'
 import ResourcesIndex from './ResourcesIndex.js'
-// import {queryResources} from '../Utils.js'
+import {queryResources} from '../Utils.js'
 
 
 class ResourceContainer extends Component {
@@ -39,7 +39,10 @@ class ResourceContainer extends Component {
         return (
             <div>
                 {
-                this.state.showOne ? <Resource resource={this.state.current}/> : <ResourcesIndex resources={this.state.resources} onRowClick={(resource) => this.toggleDetails}/> 
+                // this.state.showOne ? 
+                // <Resource resource={this.state.current}/> : 
+                <ResourcesIndex resources={this.state.resources}/> 
+                //  onRowClick={(resource) => this.toggleDetails}/> 
                     
                 }
             </div>

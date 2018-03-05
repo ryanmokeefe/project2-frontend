@@ -1,9 +1,21 @@
 import React, {Component} from 'react';
+import {queryResources} from '../Utils.js'
 
 
 class ResourceRow extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            resources: []
+        }
+    }
+
+    componentDidMount() {
+        queryResources()
+            .then((data) => 
+            this.setState({
+                resources: data.data
+            }))
     }
 
     render() {

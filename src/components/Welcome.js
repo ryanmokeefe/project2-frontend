@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from './Nav.js';
 
 class Welcome extends Component {
     
@@ -29,7 +28,7 @@ class Welcome extends Component {
             </div>
 
 
-            <h2 class="center"><a href="/resources">Find resources for any topic!</a></h2>
+            <h2 className="center"><a href="/resources">Find resources for any topic!</a></h2>
 
 
 

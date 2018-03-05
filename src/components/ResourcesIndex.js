@@ -20,34 +20,34 @@ render () {
     // console.log('render ResourceIndex: ' + this.props)
     let resourcesList = this.props.resources.map((resource, index) => {
         return(
-            // <ResourceRow resource={resource} index={index} key={index}/>
+            <ResourceRow resource={resource} index={index} key={index}/>
 
-            <tr key={index}>
-                <td>
-                    <div className="votes">{resource.votes}</div>
-                </td>
-                {/* add click event to toggle Resource view: */}
-                {/* <td onClick={() => this.props.toggleShowDetails(resource)}> */}
-                <td>
+            // <tr key={index}>
+            //     <td>
+            //         <div className="votes">{resource.votes}</div>
+            //     </td>
+            //     {/* add click event to toggle Resource view: */}
+            //     {/* <td onClick={() => this.props.toggleShowDetails(resource)}> */}
+            //     <td>
 
-                    <h4>
-                        <Link to={{
-                            pathname: `/resources/${resource.name}`,
-                            state: {resource: resource}
-                        }}>
-                        {/* <a href="/resources/{resource.name}"> */}
-                        {resource.name}
-                        {/* </a>  */}
-                        </Link>
-                    </h4>    
-                </td>
-                <td>
-                    {resource.subject} 
-                </td>
-                <td>
-                    <a href={resource.url}>{resource.url}</a>
-                </td>
-            </tr>
+            //         <h4>
+            //             <Link to={{
+            //                 pathname: `/resources/${resource.name}`,
+            //                 state: {resource: resource}
+            //             }}>
+            //             {/* <a href="/resources/{resource.name}"> */}
+            //             {resource.name}
+            //             {/* </a>  */}
+            //             </Link>
+            //         </h4>    
+            //     </td>
+            //     <td>
+            //         {resource.subject} 
+            //     </td>
+            //     <td>
+            //         <a href={resource.url}>{resource.url}</a>
+            //     </td>
+            // </tr>
        )
     });
 

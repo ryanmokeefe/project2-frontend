@@ -1,21 +1,31 @@
 import React, { Component } from 'react'
 import {object, number} from 'prop-types'
+// import {queryResources} from '../Utils.js'
 
 class Resource extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            resource: this.props.resource
+            resources: this.props.resources
         }
 
     }
+
+    // componentDidMount() {
+    //     queryResources()
+    //         .then((data) => 
+    //         this.setState({
+    //             resources: data.data
+    //         }))
+    // }
+
 
     render() {
         // let resource = this.props.resources.find((resource) => {
         //     console.log(resource)
         //     // return resource.name === this.props.match.params.name
         // })
-console.log(this.props.resource)
+console.log(this.props.resources)
         return (
             <div> 
                 <h1>thiiiiiiings</h1>
