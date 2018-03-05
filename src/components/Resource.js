@@ -11,13 +11,15 @@ class Resource extends Component {
 
     }
 
-    // componentDidMount() {
-    //     queryResources()
-    //         .then((data) => 
-    //         this.setState({
-    //             resources: data.data
-    //         }))
-    // }
+    componentDidMount() {
+        this.setState({
+            resource: (this.props.resources.find((resource) => {
+                    console.log(resource)
+                    // return resource.name === this.props.match.params.name
+                }))
+        })
+            
+    }
 
 
     render() {
