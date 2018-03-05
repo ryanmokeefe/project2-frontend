@@ -5,16 +5,17 @@ class Resource extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            resources: this.props.resources
+            resource: this.props.resource
         }
 
     }
 
     render() {
-        let resource = this.props.resources.find((resource) => {
-            return resource.name === this.props.match.params.name
-        })
-
+        // let resource = this.props.resources.find((resource) => {
+        //     console.log(resource)
+        //     // return resource.name === this.props.match.params.name
+        // })
+console.log(this.props.resource)
         return (
             <div> 
                 <h1>thiiiiiiings</h1>

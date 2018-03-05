@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 // import getRequest from '../requests';
 // import {object, number} from 'prop-types';
 import ResourceRow from './ResourceRow.js';
@@ -30,14 +31,21 @@ render () {
                 <td>
 
                     <h4>
-                        <a href="/resources/{resource.name}">{resource.name}</a> 
+                        <Link to={{
+                            pathname: `/resources/${resource.name}`,
+                            state: {resource: resource}
+                        }}>
+                        {/* <a href="/resources/{resource.name}"> */}
+                        {resource.name}
+                        {/* </a>  */}
+                        </Link>
                     </h4>    
                 </td>
                 <td>
                     {resource.subject} 
                 </td>
                 <td>
-                    <a href="{resource.url}">{resource.url}</a>
+                    <a href={resource.url}>{resource.url}</a>
                 </td>
             </tr>
        )
