@@ -1,25 +1,21 @@
 import React, { Component } from 'react'
-import {object, number} from 'prop-types'
+// import {object, number} from 'prop-types'
 // import {queryResources} from '../Utils.js'
 
 class Resource extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            resources: this.props.resources
-        }
-
     }
 
-    componentDidMount() {
-        this.setState({
-            resource: (this.props.resources.find((resource) => {
-                    console.log(resource)
-                    // return resource.name === this.props.match.params.name
-                }))
-        })
+    // componentDidMount() {
+    //     this.setState({
+    //         resource: (this.props.resources.find((resource) => {
+    //                 console.log(resource)
+    //                 // return resource.name === this.props.match.params.name
+    //             }))
+    //     })
             
-    }
+    // }
 
 
     render() {
@@ -27,7 +23,7 @@ class Resource extends Component {
         //     console.log(resource)
         //     // return resource.name === this.props.match.params.name
         // })
-console.log(this.props.resources)
+console.log(this.props.resource)
         return (
             <div> 
                 <h1>thiiiiiiings</h1>

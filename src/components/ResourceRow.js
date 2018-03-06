@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {queryResources} from '../Utils.js'
-
+import { Link } from 'react-router-dom';
 
 class ResourceRow extends Component {
     constructor(props) {
@@ -19,24 +19,33 @@ class ResourceRow extends Component {
     }
 
     render() {
+        const resource = this.props.resource;
         return (
             <tr >
                 <td>
-                    <div className="votes">{this.props.resource.votes}</div>
+                    <div className="votes">{resource.votes}</div>
                 </td>
                 {/* add click event to toggle Resource view: */}
                 <td >
-                        <a href={"/resources/" + this.props.resource.name}>
+
+                    <Link to={{
+                        pathname: `/resources/${resource.name}`,
+                        props: {resource: resource}
+                        }}>
+                        {resource.name}
+                    </Link>
+
+                        {/* <a href={"/resources/" + this.props.resource.name}>
                         <h4>
                         {this.props.resource.name}
                         </h4>
-                        </a> 
+                        </a>  */}
                 </td>
                 <td>
-                    {this.props.resource.subject} 
+                    {resource.subject} 
                 </td>
                 <td>
-                    <a href={this.props.resource.url}>{this.props.resource.url}</a>
+                    <a href={resource.url}>{resource.url}</a>
                 </td>
             </tr>
         )
