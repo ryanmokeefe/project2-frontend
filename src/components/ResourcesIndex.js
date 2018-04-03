@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 // import getRequest from '../requests';
 // import {object, number} from 'prop-types';
 import ResourceRow from './ResourceRow.js';
-import Form from './Form.js';
 
 class ResourcesIndex extends Component {
     constructor(props){
@@ -70,8 +69,6 @@ render () {
 
     </tbody>
     </table>
-
-        <Form />
 
     </div>
     )
