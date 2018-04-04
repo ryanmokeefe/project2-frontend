@@ -1,4 +1,6 @@
-Website: additional-resources.surge.sh
+## [ => Visit the website <= ](additional-resources.surge.sh)
+
+### [ => See the server-side code <= ](https://github.com/ryanmokeefe/Project-2)
 
 # Welcome To Additional Resources!
 
@@ -36,7 +38,7 @@ Website: additional-resources.surge.sh
   
    A search bar will allow users to search by keyword for any resources. 
   
-  #### ~~ Category by Type: ~~
+  #### Category by Type:
   
   ~~A drop menu will allow users to find all resources of a certain type, i.e. article, lesson, documentation, etc.~~
   
@@ -44,7 +46,7 @@ Website: additional-resources.surge.sh
   
   Each resource will have an individual form for users to post questions, and in return, answer other's questions.
   
-  #### ~~ Voting: ~~
+  #### Voting:
   
   ~~Users will be able to vote on the resources, as well as the questions asked, and the answers posted, in order to help others find the best information possible.~~
   
@@ -52,16 +54,18 @@ Website: additional-resources.surge.sh
 
   Convert all CSS and JS for React Materialize.
   Convert all CSS and JS for responsive design from Handlebars edition.
+  Convert Carousel for React.
 
   #### User Authentication:
 
-  Connect User Auth server-side with react frontend.
+  Connect server-side User Auth with React frontend.
 
 
  ## Known Bugs: 
 
-* Handlebars bug:
-  Currently, passport does not keep the user logged in for a prolonged period of time. It will persist through multiple page loads, but I am unsure of what causes the user to be logged out.
+  #### Handlebars bug:
+
+* Currently, passport does not keep the user logged in for a prolonged period of time. It will persist through multiple page loads, but I am unsure of what causes the user to be logged out.
 
   #### React bugs
 
