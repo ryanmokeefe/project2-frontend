@@ -25,7 +25,7 @@ class ResourceRow extends Component {
                 <td>
                     <div className="votes">{resource.votes}</div>
                 </td>
-                {/* add click event to toggle Resource view: */}
+               
                 <td >
 
                     <Link to={{
@@ -35,11 +35,6 @@ class ResourceRow extends Component {
                         {resource.name}
                     </Link>
 
-                        {/* <a href={"/resources/" + this.props.resource.name}>
-                        <h4>
-                        {this.props.resource.name}
-                        </h4>
-                        </a>  */}
                 </td>
                 <td>
                     {resource.subject} 

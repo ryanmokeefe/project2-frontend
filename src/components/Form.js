@@ -10,8 +10,7 @@ class Form extends Component {
         super(props)
             this.state = {
                 show: false,
-                resource: {
-                   
+                resource: { 
                     name: null,
                     subject: null,
                     type: null,

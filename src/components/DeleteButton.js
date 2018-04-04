@@ -22,12 +22,7 @@ class DeleteButton extends Component {
         }
 
         return (
-            // <Link to='/resources'>
-            
-
             <input className="z-depth-5 submit" type="button" value="Remove Resource" onClick={this.handleDelete}/>
-             
-            // </Link>
         )
 }
 

@@ -6,8 +6,8 @@ const Nav = () => {
               
         <div className="nav-wrapper">
           <div className="nav-left left">
-            <a href="#!" className="brand-logo">AR[ ]</a>
-              <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+            <a href="/" className="brand-logo">AR[ ]</a>
+              <a href="" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           </div>        
           <ul className="right hide-on-med-and-down">
 
@@ -34,7 +34,7 @@ const Nav = () => {
 
         <div className="nav-wrapper navpart-2">                
           <h1 className="center">
-            <a className="header-ar center" href="/">
+            <a className="header-ar center" href="/resources">
             <span className="bracket"> {'{'} </span>
             Additional Resources 
             <span className="bracket"> }</span>
@@ -48,7 +48,7 @@ const Nav = () => {
               <div className="wasA" href="/#1">
       {/* {{!-- 1. dropdown menu for search --}} */}
                 <a id="navMenu1" className='dropdown-button searchBtn' href='#' data-activates='dropdown1'>Sort by:</a>
-                  {/* <!-- Dropdown Structure --> */}
+      {/* <!-- Dropdown Structure --> */}
                   <ul id='dropdown1' className='dropdown-content'>
                     <li><a href="/search/videos">Videos</a></li>
                     <li><a href="/search/exercises">Exercises</a></li>
@@ -62,7 +62,7 @@ const Nav = () => {
             <li className="nav-bottom">
               <div className="wasA active" href="#2">
                 <a id="navMenu2" className='dropdown-button searchBtn' href='2' data-activates='dropdown2'>Find by type:</a>
-                  {/* <!-- Dropdown Structure --> */}
+      {/* <!-- Dropdown Structure --> */}
                   <ul id='dropdown2' className='dropdown-content'>
                     <li><a href="/search/articles">Articles</a></li>
                     <li><a href="/search/lessons">Lessons</a></li>
@@ -86,10 +86,10 @@ const Nav = () => {
           </ul>
           
     {/* {{!-- search bar: --}} */}
-          <div className="searchBox">
+          {/* <div className="searchBox">
             <input action="/search" className="searchBoxInput" type="text" placeholder="Search site" />
 
-          </div>
+          </div> */}
 
         </div>
       </nav>

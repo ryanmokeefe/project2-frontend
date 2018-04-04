@@ -3,18 +3,13 @@ import React, {Component} from 'react';
 import ResourcesIndex from './ResourcesIndex.js';
 import Form from './Form.js';
 import {queryResources} from '../Utils.js';
-import CLIENT_URL from '../constants.js';
-import axios from 'axios';
-
 
 class ResourceContainer extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            // current: {},
             resources: [],
             showForm: false,
-            // query: '',
             newResource: {
                 // add each key/value from schema
                 // each key in schema/state should match value of `name` on each input
@@ -51,7 +46,7 @@ class ResourceContainer extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.showForm}>Upload A Link</button>
+                <button className="z-depth-5 submit" onClick={this.showForm}>Upload A Link</button>
                 {
                 this.state.showForm ? 
                 <Form /> : 

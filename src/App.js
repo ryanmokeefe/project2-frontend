@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Nav.js';
-import ResourcesIndex from './components/ResourcesIndex.js';
 import ResourcesContainer from './components/ResourcesContainer.js';
-
 import Resource from './components/Resource.js';
-// import Form from './components/Form.js';
 import Welcome from './components/Welcome.js';
-import Utils from './Utils.js';
-import {Route, Switch, Link} from 'react-router-dom';
-import {queryResources} from './Utils.js'
+import { Route, Switch } from 'react-router-dom';
+import { queryResources } from './Utils.js'
+import './styles.css';
+
 
 class App extends Component {
   constructor (props) {
@@ -31,13 +29,11 @@ class App extends Component {
             votes: null
         }
     }
-    // this.toggleDetails = this.toggleDetails.bind(this)
 }
 
   componentDidMount() {
     queryResources()
         .then((data) => 
-        // console.log(data)
         this.setState({
             resources: data.data
         })
@@ -53,14 +49,11 @@ class App extends Component {
           <Switch>
             <Route exact path='/'                  render={()      => (<Welcome />)}/>
             <Route exact path='/resources'         render={(props) => (<ResourcesContainer {...props} resources={this.state.resources} />)}/>
-            {/* <Route exact path='/resources/add'     render={()      => (<ResourceAdd />)} /> */}
-            {/* <Route path='/resources/:title/edit'   render={(props) => (<ResourceEdit {...props} />)} /> */}
+            
             <Route path='/resources/:name'        render={(props) => (<Resource {...props}/>)} resources={this.state.resources}  />
-            {/* <Route exact path='/users'         render={()      => (<UserAuth />)} /> */}
-            {/* <Route path='/*' render={() => (<Landing />)} /> */}
+            
           </Switch>
         </main>
-        {/* <Footer /> */}
       </div>
     );
   }

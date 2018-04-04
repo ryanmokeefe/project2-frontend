@@ -11,7 +11,7 @@ class UpdateForm extends Component {
         super(props)
             this.state = {
                 show: false,
-                // oldResource: {},
+                original: {},
                 resource: { 
                     name: null,
                     subject: null,
@@ -25,19 +25,24 @@ class UpdateForm extends Component {
     }
 
     componentDidMount() {
+        axios.get(`${CLIENT_URL}/${this.props.resource.name}`)
+        .then(res => {
+            this.setState({
+                original: res.data
+            })
+        })
         this.setState({
             resource: this.props.resource,
-            // oldResource: this.props.resource
         })
         setTimeout(console.log(this.state.resource), 3000)
     }
 
     handleSubmit = () => {
-        axios.put(`${CLIENT_URL}/${this.props.resource.name}`, {resource: this.state.resource})
+        axios.put(`${CLIENT_URL}/${this.state.original.name}`, {resource: this.state.resource})
         .then(() => {
             setTimeout(queryResources(), 2000)
             setTimeout(this.props.hideForm, 3000)
-            setTimeout(this.setState({show: true}), 3000)
+            setTimeout(() => this.setState({show: true}), 2000)
         })     
         .catch(err => console.log('Woops!', err))
     }
@@ -47,7 +52,6 @@ class UpdateForm extends Component {
             this.setState({
                 resource: Object.assign(this.state.resource, {name: e.target.value}) 
             })
-            console.log(this.state.resource)
         }
     }
 
@@ -96,11 +100,11 @@ class UpdateForm extends Component {
     render() {
         if (this.state.show === true) {
           return <Redirect to={{
-            pathname: `/resources/${this.props.resource.name}`,
+            pathname: `/resources/${this.state.resource.name}`,
           }}/>
         }
         return (
-            <form action="/resources" method="post">
+            <form action="/resources" method="put">
 
             <input className="input-field row center" type="text" placeholder="Title" onChange={this.handleName}/>
             <input className="input-field row center" type="text" placeholder="Subject" onChange={this.handleSubject}/>
@@ -135,7 +139,7 @@ class UpdateForm extends Component {
         
         {/*  */}
         
-            <input className="z-depth-5 submit" type="button" value="Update Resource"  onClick={this.handleSubmit}/>
+            <input className="z-depth-5 submit" type="submit" value="Update Resource"  onClick={this.handleSubmit}/>
             <DeleteButton resource={this.props.resource}/>
             
         </form>

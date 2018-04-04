@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import UpdateForm from './UpdateForm.js';
 import DeleteButton from './DeleteButton.js';
-// import {queryResources} from '../Utils.js';
 import CLIENT_URL from '../constants.js';
 import axios from 'axios';
 
@@ -45,6 +44,14 @@ class Resource extends Component {
         })
     }
 
+    upVote = () => {
+        let total = this.state.resource.votes + 1
+        this.setState({
+            resource: Object.assign(this.state.resource, {votes: total}) 
+        })
+        axios.put(`${CLIENT_URL}/${this.state.resource.name}`, {resource: this.state.resource})
+        
+    }
 
     render() {
         
@@ -73,12 +80,10 @@ class Resource extends Component {
                 <tr>
                     <td className="infoRow">
 
-                    {/* {{!-- <div className="wholeRow subject"> --}} */}
                         <p className="singleInfo">
                         <span className="singleDesc">Subject:</span>
                         {this.state.resource.subject}
                     </p>
-                    {/* {{!-- </div> --}} */}
                     </td>        
                 </tr>
                 <tr>
@@ -114,11 +119,12 @@ class Resource extends Component {
                     </div>
                     </td>  
                 </tr>
-                <tr>
+                <tr className="voteRow">
                     <td className="infoRow">
                     <div className="center">
-                        <button id="voteUp" className="voteButton z-depth-3">Like</button>
-                        <button id="voteDown" className="voteButton z-depth-3">Dislike</button>
+    {/* add vote state change onClick */}
+                        <button id="voteUp" className="voteButton z-depth-3" onClick={this.upVote} >Like</button>
+                        
                     </div>
                     <div className="votes">{this.state.resource.votes}</div>
 
@@ -130,7 +136,7 @@ class Resource extends Component {
                 
             {
                 this.state.showForm ? 
-                <UpdateForm resource={this.state.resource} hideForm={this.hideForm} /> : < div> <button onClick={this.showForm}>Update Resource</button> 
+                <UpdateForm resource={this.state.resource} hideForm={this.hideForm} /> : < div> <button className="z-depth-5 submit" onClick={this.showForm}>Update Resource</button> 
                 <DeleteButton  resource={this.state.resource}/> </div>     
             }
 
