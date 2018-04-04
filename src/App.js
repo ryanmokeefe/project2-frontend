@@ -4,9 +4,13 @@ import Nav from './components/Nav.js';
 import ResourcesContainer from './components/ResourcesContainer.js';
 import Resource from './components/Resource.js';
 import Welcome from './components/Welcome.js';
+import Search from './components/Search.js';
 import { Route, Switch } from 'react-router-dom';
 import { queryResources } from './Utils.js'
 import './styles.css';
+import { findDOMNode } from 'react-dom';
+import $ from 'jquery'; 
+import './main.js';
 
 
 class App extends Component {
@@ -47,11 +51,11 @@ class App extends Component {
         <Nav />
         <main>
           <Switch>
-            <Route exact path='/'                  render={()      => (<Welcome />)}/>
-            <Route exact path='/resources'         render={(props) => (<ResourcesContainer {...props} resources={this.state.resources} />)}/>
-            
-            <Route path='/resources/:name'        render={(props) => (<Resource {...props}/>)} resources={this.state.resources}  />
-            
+            <Route exact path='/' render={() => (<Welcome />)}/>
+            <Route exact path='/resources' render={(props) => (<ResourcesContainer {...props} resources={this.state.resources} />)}/>
+            <Route path='/resources/:name' render={(props) => (<Resource {...props} resources={this.state.resources} />)} />
+            <Route path='/search/:type' render={(props) => (<Search {...props} resources={this.state.resources} />)} />
+
           </Switch>
         </main>
       </div>

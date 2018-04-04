@@ -32,10 +32,6 @@ class ResourceContainer extends Component {
             }))
     }
 
-    componentWillReceiveProps() {
-        console.log(this.state.newResource)
-    }
-
     showForm = () => {
         this.setState({
             showForm: true

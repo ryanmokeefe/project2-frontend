@@ -6,10 +6,11 @@ const Nav = () => {
               
         <div className="nav-wrapper">
           <div className="nav-left left">
-            <a href="/" className="brand-logo">AR[ ]</a>
-              <a href="" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+            <a href="/" className="brand-logo center">AR[ ... ]</a>
+{/* ADD -  hamburger menu when userAuth is complete */}
+              {/* <a href="" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a> */}
           </div>        
-          <ul className="right hide-on-med-and-down">
+          {/* <ul className="right hide-on-med-and-down"> */}
 
             {/* {#if currentUser}
               <li><a href="/logout">Logout {currentUser.local.email}</a></li>
@@ -28,7 +29,7 @@ const Nav = () => {
             {/if}  
             <li><a href="/profile">Profile</a></li> */}
 
-          </ul>
+          {/* </ul> */}
 
         </div>
 
@@ -85,7 +86,7 @@ const Nav = () => {
             </li>
           </ul>
           
-    {/* {{!-- search bar: --}} */}
+{/* {{!-- search bar: --}} */}
           {/* <div className="searchBox">
             <input action="/search" className="searchBoxInput" type="text" placeholder="Search site" />
 
