@@ -1,6 +1,4 @@
-## [ => Visit the website <= ](additional-resources.surge.sh)
-
-### [ => See the server-side code <= ](https://github.com/ryanmokeefe/Project-2)
+## [ => Visit the website <= ](https://additional-resources.surge.sh) || [ => See the server-side code <= ](https://github.com/ryanmokeefe/Project-2)
 
 # Welcome To Additional Resources!
 
@@ -63,7 +61,7 @@
 
  ## Known Bugs: 
 
-  #### Handlebars bug:
+  #### Handlebars bugs:
 
 * Currently, passport does not keep the user logged in for a prolonged period of time. It will persist through multiple page loads, but I am unsure of what causes the user to be logged out.
 
@@ -73,6 +71,6 @@
 
 * Upon edit - Name change ONLY: reload of component will send user back to the main list, as the name (and therefore url location) no longer exists. Fix so component reloads with new name. (possible fix: change to grab resource ID)
 
-* GarfieldMinusGarfield redirect not properly implemented yet...
+* GarfieldMinusGarfield redirect not implemented yet...
 
 
