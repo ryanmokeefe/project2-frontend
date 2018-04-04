@@ -11,10 +11,10 @@ class ResourceContainer extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            current: {},
+            // current: {},
             resources: [],
-            showOne: false,
-            query: '',
+            showForm: false,
+            // query: '',
             newResource: {
                 // add each key/value from schema
                 // each key in schema/state should match value of `name` on each input
@@ -27,13 +27,6 @@ class ResourceContainer extends Component {
                 votes: null
             }
         }
-        this.handleName = this.handleName.bind(this)
-        this.handleSubject = this.handleSubject.bind(this)
-        this.handleType = this.handleType.bind(this)
-        this.handleUrl = this.handleUrl.bind(this)
-        this.handleVideos = this.handleVideos.bind(this)
-        this.handleExercises = this.handleExercises.bind(this)
-        
     }
 
     componentDidMount() {
@@ -44,71 +37,26 @@ class ResourceContainer extends Component {
             }))
     }
 
-    handleNewPost(){
-        axios.put(`${CLIENT_URL}/${this.props.match.params.name}`)
+    componentWillReceiveProps() {
+        console.log(this.state.newResource)
     }
 
-    handleName(e) {
-        if (e.target.value) {
-            this.setState({
-                newResource: Object.assign(this.state.newResource, {name: e.target.value}) 
-            })
-        }
+    showForm = () => {
+        this.setState({
+            showForm: true
+        })
     }
-
-    handleSubject(e) {
-        if (e.target.value) {
-            this.setState({
-                newResource: Object.assign(this.state.newResource, {subject: e.target.value}) 
-            })
-        }
-    }
-
-    handleType(e) {
-        if (e.target.value) {
-            this.setState({
-                newResource: Object.assign(this.state.newResource, {type: e.target.value}) 
-            })
-        }
-    }
-
-    handleUrl(e) {
-        if (e.target.value) {
-            this.setState({
-                newResource: Object.assign(this.state.newResource, {url: e.target.value}) 
-            })
-        }
-    }
-
-    handleVideos(e) {
-        if (e.target.value) {
-            this.setState({
-                newResource: Object.assign(this.state.newResource, {videos: e.target.value}) 
-            })
-        }
-    }
-
-    handleExercises(e) {
-        if (e.target.value) {
-            this.setState({
-                newResource: Object.assign(this.state.newResource, {exercises: e.target.value}) 
-            })
-        }
-    }
-
 
 
     render() {
         return (
             <div>
+                <button onClick={this.showForm}>Upload A Link</button>
                 {
-                // this.state.showOne ? 
-                // <Resource resource={this.state.current}/> : 
-                <ResourcesIndex resources={this.state.resources}/> 
-                //  onRowClick={(resource) => this.toggleDetails}/> 
-                    
+                this.state.showForm ? 
+                <Form /> : 
+                <ResourcesIndex resources={this.state.resources}/>     
                 }
-                <Form handleName={this.handleName(e)} handleSubject={this.handleSubject(e)} handleType={this.handleType(e)} handleUrl={this.handleUrl(e)} handleVideos={this.handleVideos(e)} handleExercises={this.handleExercises(e)}/>
 
             </div>
         )

@@ -6,12 +6,11 @@ import CLIENT_URL from '../constants.js';
 import {queryResources} from '../Utils.js';
 
 
-class UpdateForm extends Component {
+class Form extends Component {
     constructor(props){
         super(props)
             this.state = {
                 show: false,
-                // oldResource: {},
                 resource: { 
                     name: null,
                     subject: null,
@@ -25,19 +24,17 @@ class UpdateForm extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            resource: this.props.resource,
-            // oldResource: this.props.resource
-        })
-        setTimeout(console.log(this.state.resource), 3000)
+        this.setState({resource: this.props.resource})
+        // setTimeout(console.log(this.state.resource), 2000)
     }
 
-    handleSubmit = () => {
+    handleSubmit = async (e) => {
+
         axios.put(`${CLIENT_URL}/${this.props.resource.name}`, {resource: this.state.resource})
         .then(() => {
             setTimeout(queryResources(), 2000)
-            setTimeout(this.props.hideForm, 3000)
-            setTimeout(this.setState({show: true}), 3000)
+            setTimeout(this.props.hideForm, 2000)
+            setTimeout(this.setState({show: true}), 2000)
         })     
         .catch(err => console.log('Woops!', err))
     }
@@ -96,7 +93,7 @@ class UpdateForm extends Component {
     render() {
         if (this.state.show === true) {
           return <Redirect to={{
-            pathname: `/resources/${this.props.resource.name}`,
+            pathname: `/resources/${this.state.resource.name}`,
           }}/>
         }
         return (
@@ -136,9 +133,9 @@ class UpdateForm extends Component {
         {/*  */}
         
             <input className="z-depth-5 submit" type="button" value="Update Resource"  onClick={this.handleSubmit}/>
-            <DeleteButton resource={this.props.resource}/>
+            <DeleteButton resource={this.state.resource}/>
             
         </form>
     )}
 }
-export default UpdateForm
+export default Form

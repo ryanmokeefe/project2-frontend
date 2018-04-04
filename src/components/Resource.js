@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UpdateForm from './UpdateForm.js';
+import DeleteButton from './DeleteButton.js';
 // import {queryResources} from '../Utils.js';
 import CLIENT_URL from '../constants.js';
 import axios from 'axios';
@@ -8,6 +9,7 @@ class Resource extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            showForm: false,
             resource: {},
             updatedResource: {
                 name: null,
@@ -19,7 +21,7 @@ class Resource extends Component {
                 votes: null
             }
         }
-
+        this.hideForm = this.hideForm.bind(this)
     }
 
     componentDidMount() {
@@ -31,13 +33,18 @@ class Resource extends Component {
             })
     }
 
-    handleUpdate() {
-
+    showForm = () => {
+        this.setState({
+            showForm: true
+        })
     }
 
-    handleDelete() {
-        
+    hideForm = () => {
+        this.setState({
+            showForm: false
+        })
     }
+
 
     render() {
         
@@ -120,7 +127,13 @@ class Resource extends Component {
 
                 </tbody>
             </table>
-                <UpdateForm />
+                
+            {
+                this.state.showForm ? 
+                <UpdateForm resource={this.state.resource} hideForm={this.hideForm} /> : < div> <button onClick={this.showForm}>Update Resource</button> 
+                <DeleteButton  resource={this.state.resource}/> </div>     
+            }
+
             </div>
 
     )}
