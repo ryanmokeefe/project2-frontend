@@ -7,5 +7,4 @@ export function queryResources (query) {
 
   return axios.get(url)
    
-
 }
