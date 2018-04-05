@@ -1,4 +1,4 @@
-## [ => Visit the website <= ](https://additional-resources.surge.sh) || [ => See the server-side code <= ](https://github.com/ryanmokeefe/Project-2)
+## [ => Visit the website <= ](https://additionalresources.herokuapp.com/) || [ => See the server-side code <= ](https://github.com/ryanmokeefe/Project-2)
 
 # Welcome To Additional Resources!
 

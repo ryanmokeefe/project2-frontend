@@ -19,7 +19,7 @@ class UpdateForm extends Component {
                     url: null,
                     videos: null,
                     exercises: null,
-                    votes: null
+                    votes: 0
                 }
             }
     }
