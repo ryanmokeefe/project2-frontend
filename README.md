@@ -61,11 +61,11 @@
 
  ## Known Bugs: 
 
-  #### Handlebars bugs:
+#### Handlebars bugs:
 
 * Currently, passport does not keep the user logged in for a prolonged period of time. It will persist through multiple page loads, but I am unsure of what causes the user to be logged out.
 
-  #### React bugs
+#### React bugs:
 
 * Upon delete, the redirect to the main list is not reloading data, resulting in the deleted post still being displayed until the page is refreshed.
 
