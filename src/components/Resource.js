@@ -3,6 +3,8 @@ import UpdateForm from './UpdateForm.js';
 import DeleteButton from './DeleteButton.js';
 import CLIENT_URL from '../constants.js';
 import axios from 'axios';
+import styled from 'styled-components';
+import Card from 'react-materialize';
 
 class Resource extends Component {
     constructor(props) {
@@ -61,6 +63,9 @@ class Resource extends Component {
 
             <div>
 
+                <Card className='blue-grey darken-1' textClassName='white-text' title='Card title' actions={[<a href='#'>This is a link</a>]}>
+                I am a very simple card.
+                </Card>
             <table className="fullscreen z-depth-5 highlight">
                 <thead>
                     <tr>
